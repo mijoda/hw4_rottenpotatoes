@@ -9,12 +9,6 @@ end
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 
-# Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-#   #  ensure that that e1 occurs before e2.
-#   #  page.body is the entire content of the page as a string.
-#   flunk "Unimplemented"
-# end
-
 # Buglet: this works for titles only!
 Then /I should see "(.*)" before "(.*)"/ do |title1, title2|
   titles = page.all('#movies tbody tr').map {|row|  row.text.lines.to_a[0].chomp}
@@ -38,10 +32,6 @@ Then /the movies should be sorted by release date/ do
   end
 end
 
-# Make it easier to express checking or unchecking several boxes at once
-#  "When I uncheck the following ratings: PG, G, R"
-#  "When I check the following ratings: G"
-
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   rating_list.split(/,\s*/).each do |rating|
     step %{I #{uncheck}check "ratings_#{rating}"}  # Figuring this out took forever!
@@ -51,7 +41,6 @@ end
 
 Then /I should only see movies with these ratings: (.*)/ do |rating_list|
   ratings = rating_list.split(/,\s*/)
-  #Movie.all.all? do |movie|             # I don't think we're evaluating booleans here!
   Movie.all.all? do |movie|
     if ratings.include? movie.rating
       step %{I should see "#{movie.title}"}
