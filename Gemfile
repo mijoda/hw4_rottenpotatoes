@@ -15,7 +15,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'simplecov'
+  # Add :require => false as per screencast 6.8.1?
+  gem 'simplecov', :require => false
   gem 'ZenTest'  # For autotest, per screencast.
 end
 group :production do
