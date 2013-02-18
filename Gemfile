@@ -16,6 +16,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'ZenTest'  # For autotest, per screencast.
 end
 group :production do
   gem 'pg'
