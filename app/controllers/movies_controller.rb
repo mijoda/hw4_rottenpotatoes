@@ -66,10 +66,7 @@ class MoviesController < ApplicationController
 
   def search_by_director
     @movie = Movie.find(params[:id])
-    # Maybe make a trivial model method for this
-    @movies = Movie.find_all_by_director(@movie.director)
-#    render search_by_director_movies_path(:director => @director)
-#    render search_by_director_movies_path(@director)
+    @similar_movies = @movie.movies_with_same_director
   end
 
 end
