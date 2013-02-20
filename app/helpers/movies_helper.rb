@@ -1,6 +1,7 @@
 module MoviesHelper
-  # Checks if a number is odd:
-  def oddness(count)
-    count.odd? ?  "odd" :  "even"
-  end
+  # Not used or tested
+  # # Checks if a number is odd:
+  # def oddness(count)
+  #   count.odd? ?  "odd" :  "even"
+  # end
 end
