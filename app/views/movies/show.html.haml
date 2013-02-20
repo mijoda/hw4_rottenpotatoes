@@ -18,7 +18,11 @@
 %p#description= @movie.description
 
 = link_to 'Edit', edit_movie_path(@movie)
--# Next line doesn't look good.
-= link_to "Search for other movies by director #{@movie.director}", "/movies/same_director/#{@movie.id}"
+%br
+
+-# Next took hours to figure out!
+= link_to "Search for other movies by director #{@movie.director}",
+	search_by_director_movies_path(:director => @movie.director)
+
 = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to movie list', movies_path
