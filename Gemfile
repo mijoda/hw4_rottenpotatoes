@@ -5,6 +5,10 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+# TEST ONLY PER SCREENCAST?
+gem 'simplecov', :require => false, :group => :test
+
+
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
@@ -16,7 +20,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   # Add :require => false as per screencast 6.8.1?
-  gem 'simplecov', :require => false
+#  gem 'simplecov', :require => false
   gem 'ZenTest'  # For autotest, per screencast.
 end
 group :production do
