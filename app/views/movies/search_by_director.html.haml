@@ -1,6 +1,5 @@
-%h2 Movies by #{@director}
+%h2 Movies by #{@movie.director}
 
--# TODO: Make movies clickable!
 %ul
 - @movies.each do |movie|
   %li= link_to "#{movie.title}", movie_path(movie)

@@ -14,7 +14,7 @@ Rottenpotatoes::Application.routes.draw do
 
   # Route for finding similar movies
   resources :movies do 
-    get 'search_by_director', :on => :collection
+    get 'search_by_director', :on => :member
   end
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
