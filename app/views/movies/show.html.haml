@@ -21,7 +21,7 @@
 %br
 
 -# Next took hours to figure out!
-= link_to "Search for other movies by director #{@movie.director}",
+= link_to "Find Movies With Same Director",
 	search_by_director_movies_path(:director => @movie.director)
 
 = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
