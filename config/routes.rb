@@ -6,6 +6,10 @@ Rottenpotatoes::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
+  # Route for finding similar movies
+  # NEED TRAILING SLASH??
+  match 'movies/same_director/:id' => 'movies#same_director'
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
