@@ -6,7 +6,7 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 # TEST ONLY PER SCREENCAST?
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', '0.7.1', :require => false, :group => :test
 
 
 # for Heroku deployment - as described in Ap. A of ELLS book
@@ -30,7 +30,11 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'therubyracer'              
+  # therubyracer + simpleconv => cucumber problems.
+  # See http://stackoverflow.com/questions/9863200/cucumber-claims-its-support-files-are-broken
+  # There may be a better fix, but it's not worth the time.
+  # Crap, now the auto-grader's complaining about no js runtime.  Let's put it back in.
+  gem 'therubyracer', '0.10.2'              
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
